@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>lookup-ICD</string>
+	<key>connections</key>
+	<dict>
+		<key>B93777C3-A688-4746-800C-E400CC75A5C5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CFDB5F31-130A-40B2-81D1-EE79F7FA3738</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F40C53BB-1933-4A06-8745-124601774BEA</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Large Type</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>CFDB5F31-130A-40B2-81D1-EE79F7FA3738</key>
+		<array/>
+		<key>F40C53BB-1933-4A06-8745-124601774BEA</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>giovanni</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Lookup ICD10 codes</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}
+</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>CFDB5F31-130A-40B2-81D1-EE79F7FA3738</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>icd</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>...looking up...</string>
+				<key>script</key>
+				<string>IFS=$'\n' 
+
+cat &lt;&lt; EOB
+
+	{"items": [
+
+EOB
+
+myMatch="$(grep -i {query} icd10cm_codes_2020.txt)" 
+
+for i in ${myMatch[@]}; do 
+
+	Code=($(echo "$i" | cut -f1))  
+	Definition=($(echo "$i" | cut -f2))  
+
+
+
+cat &lt;&lt; EOB
+
+ 
+
+
+    {
+        "title": "$Definition ($Code)",
+        "subtitle": "ICD10 - Enter to copy to clipboard",
+        "arg": "$Definition ($Code)",
+        "icon": {
+			"path": "icd.png"
+			}	    
+	},
+
+
+
+
+EOB
+done
+
+cat &lt;&lt; EOB
+	]}
+EOB</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>enter phenotype or code</string>
+				<key>title</key>
+				<string>Lookup ICD 10 codes</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B93777C3-A688-4746-800C-E400CC75A5C5</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>F40C53BB-1933-4A06-8745-124601774BEA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>B93777C3-A688-4746-800C-E400CC75A5C5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>25</integer>
+			<key>ypos</key>
+			<integer>265</integer>
+		</dict>
+		<key>CFDB5F31-130A-40B2-81D1-EE79F7FA3738</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>195</integer>
+		</dict>
+		<key>F40C53BB-1933-4A06-8745-124601774BEA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>380</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.1</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
