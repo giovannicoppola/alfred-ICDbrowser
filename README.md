@@ -1,4 +1,4 @@
-# alfred-ICDbrowser
+# alfred-ICD browser
 A browser for ICD-10 codes
 
 
@@ -68,12 +68,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ICDbrowser/t
 
 <h1 id="acknowledgments">Acknowledgments 😀</h1>
 
-- Icons from [Flaticon](https://www.flaticon.com/): 
-	- number 1: https://www.flaticon.com/free-icon/number-1_9770783?term=1&page=1&position=35&origin=search&related_id=9770783
-	- number 2: https://www.flaticon.com/free-icon/two_10125947?term=2&page=1&position=33&origin=search&related_id=10125947
-	- number 3: https://www.flaticon.com/free-icon/number-3_9494620?term=3&page=1&position=17&origin=search&related_id=9494620
-	- number 4: https://www.flaticon.com/free-icon/number-4_10358556?term=4&page=1&position=7&origin=search&related_id=10358556
-	- number 5: https://www.flaticon.com/free-icon/number-5_8068238?term=5&page=1&position=6&origin=search&related_id=8068238
+- Icons from [Flaticon](https://www.flaticon.com/)
 	
 	
 <h1 id="changelog">Changelog 🧰</h1>
