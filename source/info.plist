@@ -8,11 +8,24 @@
 	<string>myWorkflows</string>
 	<key>connections</key>
 	<dict>
-		<key>B93777C3-A688-4746-800C-E400CC75A5C5</key>
+		<key>633AC663-37B1-4355-85E5-8832CB5B40BC</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CFDB5F31-130A-40B2-81D1-EE79F7FA3738</string>
+				<string>EBED84D9-7AA9-4386-9D42-B79401C78534</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>886B6E04-9355-48CC-95E9-2E52348404B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8C1896F5-873E-4CEE-AF45-D2B7CB12663E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -22,24 +35,43 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>F40C53BB-1933-4A06-8745-124601774BEA</string>
+				<string>D8FEDD40-69F1-43FB-BF24-C05AFD6C5F6B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EBED84D9-7AA9-4386-9D42-B79401C78534</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>886B6E04-9355-48CC-95E9-2E52348404B4</string>
 				<key>modifiers</key>
 				<integer>131072</integer>
 				<key>modifiersubtext</key>
-				<string>Large Type</string>
+				<string>Show in large type and copy to clipboard</string>
 				<key>vitoclose</key>
 				<true/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CA66776-CC00-42F8-BD44-0199947FA547</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
-		<key>CFDB5F31-130A-40B2-81D1-EE79F7FA3738</key>
-		<array/>
-		<key>F40C53BB-1933-4A06-8745-124601774BEA</key>
-		<array/>
 	</dict>
 	<key>createdby</key>
 	<string>giovanni</string>
 	<key>description</key>
-	<string></string>
+	<string>browsing and searching the ICD-10 database</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -52,8 +84,7 @@
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
-				<string>{query}
-</string>
+				<string>{var:myTextOutput}</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>transient</key>
@@ -62,93 +93,7 @@
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>CFDB5F31-130A-40B2-81D1-EE79F7FA3738</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>1</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>...looking up...</string>
-				<key>script</key>
-				<string>IFS=$'\n' 
-
-cat &lt;&lt; EOB
-
-	{"items": [
-
-EOB
-
-myMatch="$(grep -i {query} icd10cm_codes_2020.txt)" 
-
-for i in ${myMatch[@]}; do 
-
-	Code=($(echo "$i" | cut -f1))  
-	Definition=($(echo "$i" | cut -f2))  
-
-
-
-cat &lt;&lt; EOB
-
- 
-
-
-    {
-        "title": "$Definition ($Code)",
-        "subtitle": "ICD10 - Enter to copy to clipboard",
-        "arg": "$Definition ($Code)",
-        "icon": {
-			"path": "icd.png"
-			}	    
-	},
-
-
-
-
-EOB
-done
-
-cat &lt;&lt; EOB
-	]}
-EOB</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>enter phenotype or code</string>
-				<key>title</key>
-				<string>Lookup ICD 10 codes</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>B93777C3-A688-4746-800C-E400CC75A5C5</string>
+			<string>8C1896F5-873E-4CEE-AF45-D2B7CB12663E</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -168,7 +113,7 @@ EOB</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>largetypetext</key>
-				<string>{query}</string>
+				<string>{var:myTextOutput}</string>
 				<key>textcolor</key>
 				<string></string>
 				<key>wrapat</key>
@@ -177,7 +122,7 @@ EOB</string>
 			<key>type</key>
 			<string>alfred.workflow.output.largetype</string>
 			<key>uid</key>
-			<string>F40C53BB-1933-4A06-8745-124601774BEA</string>
+			<string>D8FEDD40-69F1-43FB-BF24-C05AFD6C5F6B</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -197,7 +142,7 @@ EOB</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>icd</string>
+				<string>{var:mainKeyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -209,21 +154,25 @@ EOB</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
-export PYTHONPATH="$PWD/lib"
-python3 icd-fun.py</string>
+				<string>export PYTHONPATH="$PWD/lib"
+python3 icd-query.py "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>browse, query, visualize hierarchy, copy to clipboard</string>
 				<key>title</key>
-				<string>Building ICDbrowser database</string>
+				<string>Browse the ICD-10 database</string>
 				<key>type</key>
 				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>icd-query</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -232,24 +181,127 @@ python3 icd-fun.py</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>22</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>6</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>633AC663-37B1-4355-85E5-8832CB5B40BC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>886B6E04-9355-48CC-95E9-2E52348404B4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>icd-query</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>8CA66776-CC00-42F8-BD44-0199947FA547</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># alfred-ICDbrowser
+A browser for ICD-10 codes
+
+![](alfred-ICDbrowser.png)
+
+# Basic Usage 📖
+
+## Browsing 📇
+- launch with keyword (default: `icd-b`) or custom hotkey. 
+- a search term (optional, multiple strings supported) will filter the entries at the current level. 
+- Browse across categories: 
+	- `Enter`: forward
+	- `Cmd-Enter`: back
+- `Shift-enter` will show the corresponding entry in large font and copy it to the clipboard
+- `Ctrl-enter` will show the corresponding entry within the ICD hierarchy (current item will be marked with ✴️)
+	
+
+## Searching 🔍
+- adding `--a` to the search string (multiple strings supported) will search across the entire ICD-10 database.
+- `Ctrl-enter` will show the corresponding entry within the ICD hierarchy (current item will be marked with ✴️)
+- `Shift-enter` will show the corresponding entry in large font and copy it to the clipboard
+
+## Showing entry within the ICD hierarchy 🌲
+- `Ctrl-enter` will show the corresponding entry within the ICD hierarchy (current item will be marked with ✴️)
+- `Shift-enter` will show the hierarchy in large font and copy it to the clipboard</string>
 	<key>uidata</key>
 	<dict>
-		<key>B93777C3-A688-4746-800C-E400CC75A5C5</key>
+		<key>633AC663-37B1-4355-85E5-8832CB5B40BC</key>
 		<dict>
 			<key>xpos</key>
-			<real>30</real>
+			<real>510</real>
+			<key>ypos</key>
+			<real>405</real>
+		</dict>
+		<key>886B6E04-9355-48CC-95E9-2E52348404B4</key>
+		<dict>
+			<key>xpos</key>
+			<real>960</real>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
+		<key>8C1896F5-873E-4CEE-AF45-D2B7CB12663E</key>
+		<dict>
+			<key>xpos</key>
+			<real>1090</real>
 			<key>ypos</key>
 			<real>265</real>
 		</dict>
-		<key>CFDB5F31-130A-40B2-81D1-EE79F7FA3738</key>
+		<key>8CA66776-CC00-42F8-BD44-0199947FA547</key>
 		<dict>
 			<key>xpos</key>
-			<real>300</real>
+			<real>1090</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>610</real>
+		</dict>
+		<key>D8FEDD40-69F1-43FB-BF24-C05AFD6C5F6B</key>
+		<dict>
+			<key>xpos</key>
+			<real>1090</real>
+			<key>ypos</key>
+			<real>400</real>
 		</dict>
 		<key>EBED84D9-7AA9-4386-9D42-B79401C78534</key>
 		<dict>
@@ -258,21 +310,36 @@ python3 icd-fun.py</string>
 			<key>ypos</key>
 			<real>405</real>
 		</dict>
-		<key>F40C53BB-1933-4A06-8745-124601774BEA</key>
-		<dict>
-			<key>xpos</key>
-			<real>300</real>
-			<key>ypos</key>
-			<real>380</real>
-		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>icd-b</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>keyword to launch the workflow</string>
+			<key>label</key>
+			<string>Main Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>mainKeyword</string>
+		</dict>
+	</array>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
 	<string>0.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/giovannicoppola/alfred-ICDbrowser</string>
 </dict>
 </plist>

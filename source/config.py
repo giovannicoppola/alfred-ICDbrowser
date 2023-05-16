@@ -14,13 +14,13 @@ def log(s, *args):
     print(s, file=sys.stderr)
 
 
-MY_DATAFILE = ('../bigFiles/WHO_disease_classification_clean.csv')
 
 
-WF_BUNDLE = os.getenv('alfred_workflow_bundleid')
 DATA_FOLDER = os.getenv('alfred_workflow_data')
 DATABASE_FILE = DATA_FOLDER + '/icd.db'
 
 if not os.path.exists(DATA_FOLDER):
     os.makedirs(DATA_FOLDER)
 
+if not os.path.exists(DATABASE_FILE):
+    os.rename('icd.db', DATABASE_FILE)
