@@ -1,4 +1,4 @@
-# alfred-ICD browser
+# alfred-ICD 🔟 browser
 An [Alfred](https://www.alfredapp.com/) browser for ICD-10 codes
 
 
@@ -24,7 +24,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ICDbrowser/t
 
 <h1 id="motivation">Motivation ✅</h1>
 
-- To search or browse ICD10 codes
+- To search or browse ICD-10 codes without opening a browser/website
 - to review and learn about the ICD-code hierarchy
 
 
@@ -32,7 +32,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ICDbrowser/t
 <h1 id="setting-up">Setting up ⚙️</h1>
 
 ### Needed
-- Alfred 5 with Powerpack license
+- [Alfred 5](https://www.alfredapp.com/) with Powerpack license
 
 
 <h1 id="usage">Basic Usage 📖</h1>
@@ -58,7 +58,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ICDbrowser/t
 
 ## rebuilding database (optional) 🛠️
 - `alfred-ICDbrowser` comes with the database derived from the ICD XML tabular file released on April 1 2023 and available on the CDC website [here](https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/ICD10CM/April-1-2023-Update/)
-- the script `icd-fun.py` can be used to rebuild/update the database. run with `python3 icd-fun.py "path-to-XML-file.xml"`
+- the script `icd-fun.py` can be used to rebuild/update the database. Run with `python3 icd-fun.py "path-to-XML-file.xml"`
 
 <h1 id="known-issues">Limitations & known issues ⚠️</h1>
 
