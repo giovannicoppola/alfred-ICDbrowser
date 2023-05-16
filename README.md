@@ -1,5 +1,5 @@
 # alfred-ICD browser
-A browser for ICD-10 codes
+An [Alfred](https://www.alfredapp.com/) browser for ICD-10 codes
 
 
 <a href="https://github.com/giovannicoppola/alfred-ICDbrowser/releases/latest/">
