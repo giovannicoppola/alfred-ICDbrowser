@@ -8,6 +8,29 @@
 	<string>myWorkflows</string>
 	<key>connections</key>
 	<dict>
+		<key>3619A9E2-7CFA-46E7-B25B-5A37EA61B2AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>01016313-36B0-42A0-8B09-DCCCAA0F61D7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E8D946B9-4BB8-4CE6-85AB-7379F8321824</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>633AC663-37B1-4355-85E5-8832CB5B40BC</key>
 		<array>
 			<dict>
@@ -48,6 +71,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>3619A9E2-7CFA-46E7-B25B-5A37EA61B2AA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Show full output in large font and copy to clipboard</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>886B6E04-9355-48CC-95E9-2E52348404B4</string>
 				<key>modifiers</key>
 				<integer>131072</integer>
@@ -78,6 +111,62 @@
 	<string>alfred-ICDbrowser</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:myFullOutput}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>01016313-36B0-42A0-8B09-DCCCAA0F61D7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{var:myFullOutput}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>E8D946B9-4BB8-4CE6-85AB-7379F8321824</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>3619A9E2-7CFA-46E7-B25B-5A37EA61B2AA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -268,6 +357,20 @@ A browser for ICD-10 codes
 - `Shift-enter` will show the hierarchy in large font and copy it to the clipboard</string>
 	<key>uidata</key>
 	<dict>
+		<key>01016313-36B0-42A0-8B09-DCCCAA0F61D7</key>
+		<dict>
+			<key>xpos</key>
+			<real>1070</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>3619A9E2-7CFA-46E7-B25B-5A37EA61B2AA</key>
+		<dict>
+			<key>xpos</key>
+			<real>940</real>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
 		<key>633AC663-37B1-4355-85E5-8832CB5B40BC</key>
 		<dict>
 			<key>xpos</key>
@@ -302,6 +405,13 @@ A browser for ICD-10 codes
 			<real>1090</real>
 			<key>ypos</key>
 			<real>400</real>
+		</dict>
+		<key>E8D946B9-4BB8-4CE6-85AB-7379F8321824</key>
+		<dict>
+			<key>xpos</key>
+			<real>1070</real>
+			<key>ypos</key>
+			<real>150</real>
 		</dict>
 		<key>EBED84D9-7AA9-4386-9D42-B79401C78534</key>
 		<dict>
@@ -338,7 +448,7 @@ A browser for ICD-10 codes
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.1</string>
+	<string>0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/giovannicoppola/alfred-ICDbrowser</string>
 </dict>

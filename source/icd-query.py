@@ -14,6 +14,7 @@ import json
 import os
 
 MYINPUT = sys.argv[1].casefold().strip()
+PARENT_STRING = os.getenv('parentString') if os.getenv('mySource') else "Root Level"
 MY_LEVEL = int(os.getenv('mySource')) if os.getenv('mySource') else 1
 MY_NODE = int(os.getenv('myNode')) if os.getenv('myNode') else 0
 MY_MASTER_ID = int(os.getenv('myMasterID')) if os.getenv('myMasterID') else 0
@@ -39,7 +40,9 @@ def icdQuery(MYINPUT):
         myNodeStr = ""
     else:
         myNodeStr = f"AND {myNode} LIKE {MY_NODE}"
+    
     keywords = MYINPUT.split()
+    
     if len(keywords) > 1:
         conditions = []
         
@@ -57,6 +60,7 @@ def icdQuery(MYINPUT):
         sql_statement = f"SELECT * FROM ICDnew WHERE level like {MY_LEVEL} AND {conditions_str} {myNodeStr} ORDER BY itemID"
     log (sql_statement)
     rs = db.execute(sql_statement).fetchall()
+    myFullOutput = ''
     
     result = {"items": [], "variables":{}}
     if rs: 
@@ -74,23 +78,40 @@ def icdQuery(MYINPUT):
             else:
                 upNoDe = f'nodeL1'
                 upNoDe1 = f'nodeL1'
+
+            titleString = f"{KEYCAPS[r['level']]} {r['name']}: {r['description']} (⤵️ {r['children']})"
             
-                
+            if myCounter == 1:
+                myFullOutput = f"{PARENT_STRING}\n"
+            
+            myFullOutput = (myFullOutput 
+            + "\t"
+            + str(myCounter) + "/" + str(totCount)
+            + " "
+            + titleString + " "
+            
+            + "\n"
+            
+            )
+            
+            
+
             result["items"].append({
-                        "title": f"{KEYCAPS[r['level']]} {r['name']}: {r['description']} (⤵️ {r['children']})",
+                        "title": titleString,
                         
                         'subtitle': f"{myCounter}/{totCount} – level: {r['level']}",
                         'valid': True,
                         'variables': {
                             "mySource": r['level'] + 1,
                             "myNode": r[1],
-                            "backupID": r[upNoDe1]
+                            "backupID": r[upNoDe1],
+                            "parentString": f"{KEYCAPS[r['level']]} {r['name']}: {r['description']} (⤵️ {r['children']})"
                         },
                         "mods": {
                             "shift": {
                                 "valid": True,
                                 'variables': {
-                                    "myTextOutput": f"{KEYCAPS[r['level']]} {r['name']}: {r['description']} (⤵️ {r['children']})"
+                                    "myTextOutput": titleString
                                     
                                         },
                                 "arg": ""
@@ -159,6 +180,8 @@ def icdQuery(MYINPUT):
         
             })
 
+    result['variables'] = {"myFullOutput": myFullOutput}       
+    #log (myFullOutput)
     print (json.dumps(result))
                 
 

@@ -44,6 +44,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ICDbrowser/t
 	- `Enter`: forward
 	- `Cmd-Enter`: back
 - `Shift-enter` will show the corresponding entry in large font and copy it to the clipboard
+- `option-enter` will show the complete current list in large font and copy it to the clipboard
 - `Ctrl-enter` will show the corresponding entry within the ICD hierarchy (current item will be marked with ✴️)
 	
 
@@ -73,7 +74,8 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ICDbrowser/t
 	
 <h1 id="changelog">Changelog 🧰</h1>
 
-- 05-11-2023: version 0.1
+- 2023-06-14: version 0.2 (added option to copy entire output
+- 2023-05-11: version 0.1
 
 
 <h1 id="feedback">Feedback 🧐</h1>
