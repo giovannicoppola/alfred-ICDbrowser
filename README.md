@@ -33,6 +33,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-ICDbrowser/t
 
 ### Needed
 - [Alfred 5](https://www.alfredapp.com/) with Powerpack license
+- `pandas` library (can be installed with `pip3 install pandas`
 
 
 <h1 id="usage">Basic Usage 📖</h1>
